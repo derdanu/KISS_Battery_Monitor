@@ -4,7 +4,7 @@ local blnMenuMode = 0
 
 -- mahTarget is used to set our target mah consumption and mahAlertPerc is used for division of alerts
 local mahTarget = 900
-local mahAlertPerc = 10
+local mahAlertPerc = 50
 
 -- OpenTX 2.0 - Percent Unit = 8 // OpenTx 2.1 - Percent Unit = 13
 -- see: https://opentx.gitbooks.io/opentx-lua-reference-guide/content/general/playNumber.html
