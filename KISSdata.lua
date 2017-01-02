@@ -3,7 +3,7 @@ local versionInfo = "KISS Telemetry Data - v1.3.0"
 local blnMenuMode = 0
 
 -- mahTarget is used to set our target mah consumption and mahAlertPerc is used for division of alerts
-local mahTarget = 900
+local mahTarget = 1000
 local mahAlertPerc = 50
 
 -- OpenTX 2.0 - Percent Unit = 8 // OpenTx 2.1 - Percent Unit = 13
