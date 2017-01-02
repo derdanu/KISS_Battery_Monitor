@@ -65,7 +65,7 @@ local function playAlerts()
         -- Alert the user we are in critical alert
         if percVal > 110 then
           playCritical(percVal)
-        elseif percVal > 100 then
+        elseif percVal > 100 and percVal < 110 then
           playMahPerc(percVal)
         elseif percVal > 90 and percVal < 100 then
           -- Alert only 90, 93, 96, 99
