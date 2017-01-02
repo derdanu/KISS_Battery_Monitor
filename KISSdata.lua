@@ -24,6 +24,7 @@ local function getTelemetryId(name)
   return -1
 end
 
+
 local data = {}
   data.fuelUsed = getTelemetryId("Fuel")
 
@@ -65,7 +66,10 @@ local function playAlerts()
         if percVal > 100 then
           playCritical(percVal)
         elseif percVal > 90 and percVal < 100 then
-          playMahPerc(percVal)
+          -- Alert only 90, 93, 96, 99
+          if percVal % 3 == 0 then 
+            playMahPerc(percVal)
+          end
         elseif percVal % mahAlertPerc == 0 then
           playMahPerc(percVal)
         end
