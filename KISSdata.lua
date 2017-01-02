@@ -1,4 +1,4 @@
-local versionInfo = "KISS Telemetry Data - v1.3.0"
+local versionInfo = "KISS Telemetry Data - v1.3.0 - DANU Edition"
 
 local blnMenuMode = 0
 
