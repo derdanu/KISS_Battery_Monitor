@@ -27,7 +27,7 @@ end
 
 local data = {}
   data.fuelUsed = getTelemetryId("Fuel")
-
+  data.volts = getTelemetryId("VFAS") 
 
 -------------------------------------------------------------------------
 -- Utilities
@@ -91,12 +91,15 @@ local function drawAlerts()
     lastKnownMah = tmpMah
   end
 
+  tmpVolts = round(getValue(data.volts), 2)
+
   -- The display of MAH data is now pulled from the lastKnownMah var which will only
   -- be reset on Telemetry reset now.
   
-  percVal =  round(((lastKnownMah/mahTarget) * 100),0)
+  percVal = round(((lastKnownMah/mahTarget) * 100),0)
   lcd.drawText(5, 10, "USED: "..lastKnownMah.."mah" , MIDSIZE)
   lcd.drawText(90, 30, percVal.." %" , MIDSIZE)
+  lcd.drawText(150, 25, tmpVolts.." V",MIDSIZE)   
 
 end
 
@@ -207,8 +210,8 @@ local function run_func(event)
       lcd.drawScreenTitle(versionInfo,1,2)
 
       lcd.drawGauge(6, 25, 70, 20, percVal, 100)
-      lcd.drawText(130, 10, "Target mAh : ",MIDSIZE)
-      lcd.drawText(160, 25, mahTarget,MIDSIZE)
+      lcd.drawText(130, 10, "Target mAh : "..mahTarget,SMLSIZE) 
+
       lcd.drawText(130, 40, "Use +/- to change",SMLSIZE)
 
       lcd.drawText(30, 55, "Press [MENU] for more options",SMLSIZE)
